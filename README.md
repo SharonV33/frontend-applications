@@ -3,7 +3,7 @@
 In this repository, I will be working on an assignment part of the tech track at CMD. This assignment will 
 be going into cleaning up data sets, working with d3 and creating data visualisations.
 
-[Live link](https://frontend-three-rouge.vercel.app/)
+[Live link](https://frontend-applications-nine.vercel.app/)
 
 ### about the project
 

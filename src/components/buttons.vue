@@ -2,12 +2,12 @@
     <div>
         <section class="buttons">
             <section id="workingButtons">
-                <button id="DR">Drenthe</button>
-                <button id="FL">Flevoland</button>
-                <button id="GR">Groningen</button>
-                <button id="FR">Friesland</button>
-                <button id="overview">Nederland</button>
-                <button id="compare">Vergelijk provincies</button>
+                <button id="DR" v-on:click="click('DR')">Drenthe</button>
+                <button id="FL" v-on:click="click('FL')">Flevoland</button>
+                <button id="GR" v-on:click="click('GR')">Groningen</button>
+                <button id="FR" v-on:click="click('FR')">Friesland</button>
+                <button id="overview" v-on:click="click('overview')">Nederland</button>
+                <button id="compare" v-on:click="click('compare')">Vergelijk provincies</button>
             </section>
 
             <section class="disabledButtons">
@@ -26,15 +26,22 @@
 </template>
 
 <script>
+    // import d3 from "d3";
     export default {
-        name: "buttons"
+        name: "buttons",
+        methods: {
+
+            click: function(id) {
+                alert(id)
+            }
+        }
     }
 </script>
 
 <style scoped>
     .buttons {
         display: flex;
-        width: 100%;
+        width: 50%;
         flex-wrap: wrap;
     }
     .buttons section {

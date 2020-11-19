@@ -1,9 +1,10 @@
 <template>
   <div class="home">
     <homeOverview msg="Mindervaliede parkeer garages"/>
-    <buttons />
     <pie />
     <bar />
+    <buttons />
+    <button v-on:click="checkData">check json</button>
   </div>
 </template>
 
@@ -13,6 +14,9 @@ import homeOverview from '@/components/homeOverview.vue'
 import buttons from '@/components/buttons.vue'
 import pie from '@/components/pie.vue'
 import bar from '@/components/bar.vue'
+import * as jsonData from'@/helpers/jsonscript.js'
+
+
 
 export default {
   name: 'Home',
@@ -21,7 +25,14 @@ export default {
     buttons,
     pie,
     bar
-  }
+  },
+  methods: {
+    checkData: async function(){
+      const res = await jsonData.default()
+      console.log(res);
+    }
+  },
+
 }
 </script>
 

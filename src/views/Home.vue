@@ -24,16 +24,17 @@ export default {
     pie,
     bar
   },
-  data: function(){
-    return checkData()
+  data () {
+    return {
+      data: null
+    }
   },
   methods: {
-    checkData: async function(){
-      const res = await jsonData.default()
-      return res
+    checkData: async function() {
+      const fetchedData =  await jsonData.default()
+      this.data = fetchedData
     }
   }
-
 }
 </script>
 

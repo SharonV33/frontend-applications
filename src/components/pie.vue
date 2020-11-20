@@ -5,14 +5,11 @@
 <script>
     export default {
         name: "pie",
-        props: parkingdata,
-        data: {
-            parkingdata
-        },
+        props: data,
         methods: {
-            showData: async function () {
-                const data = await parkingdata
-                console.log(data)
+            showData: async function (data) {
+                const showData = await data
+                console.log(showData)
             }
         },
     }

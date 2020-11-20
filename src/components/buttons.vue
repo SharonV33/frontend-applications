@@ -34,7 +34,7 @@
             click: function(id) {
                 alert(id)
             }
-        }
+        },
     }
 </script>
 

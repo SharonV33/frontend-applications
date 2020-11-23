@@ -6,8 +6,8 @@
                 <button id="FL" v-on:click="changeProvince('FL')">Flevoland</button>
                 <button id="GR" v-on:click="changeProvince('GR')">Groningen</button>
                 <button id="FR" v-on:click="changeProvince('FR')">Friesland</button>
-                <button id="overview" v-on:click="changeProvince('overview')">Nederland</button>
-                <button id="compare" v-on:click="changeProvince('compare')">Vergelijk provincies</button>
+                <button id="overview" v-on:click="changeProvince('finalData')">Nederland</button>
+                <button id="compare" v-on:click="changeProvince('allProvinces')">Vergelijk provincies</button>
             </section>
 
             <section class="disabledButtons">

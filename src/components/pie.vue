@@ -1,7 +1,7 @@
 <template>
     <h1>pie</h1>
     <svg class="pie"></svg>
-    {{ chartData.GR }}
+    <p>{{ chartData.GR }}</p>
 </template>
 
 <script>
@@ -23,12 +23,9 @@
 
         },
         methods: {
-            buildPieChart: function() {
-                let data = this.chartData.GR
+            buildPieChart: async function() {
+                let data = await this.chartData.GR
                 this.svg = d3.selectAll(".pie")
-
-                console.log(data)
-
 
                 this.svg
                     .attr("width", this.width)

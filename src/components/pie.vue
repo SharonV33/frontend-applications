@@ -20,7 +20,6 @@
         },
         mounted() {
             this.buildPieChart()
-
         },
         methods: {
             buildPieChart: async function() {
@@ -31,7 +30,6 @@
                     .attr("width", this.width)
                     .attr("height", this.height)
 
-
                 const g = this.svg.append('g')
                     .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`)
 
@@ -39,22 +37,18 @@
                     .domain(data)
                     .range(["#98abc5", "#8a89a6"])
 
-
                 const pie = d3.pie()
                     .value(data => data.value)
-
 
                 const path = d3.arc()
                     .outerRadius(this.radius)
                     .innerRadius(0)
-
 
                 const pies = g.selectAll('.arc')
                     .data(pie(data))
                     .enter()
                     .append('g')
                     .attr('class', 'arc')
-
 
                 pies
                     .append('path')

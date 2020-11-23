@@ -31,14 +31,8 @@ export default {
   },
 
   async created() {
-      async function fetchData() {
-        let fetchedData =  await jsonData.default()
-        let data = await fetchedData
-        return data
-
-      }
-    this.chartData = await fetchData()
-    return fetchData()
+    let data = await jsonData.default()
+    this.chartData = data
   },
 
   methods: {

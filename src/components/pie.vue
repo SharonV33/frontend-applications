@@ -25,13 +25,14 @@
             buildPieChart: async function() {
                 let data = this.chartData
                 this.svg = d3.selectAll(".pie")
+                const svg = this.svg
 
-                this.svg
+                svg
                     .attr("width", this.width)
                     .attr("height", this.height)
 
 
-                const g = this.svg.append('g')
+                const g = svg.append('g')
                     .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`)
 
                 const color = d3.scaleOrdinal(data)

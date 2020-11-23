@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <homeOverview msg="Mindervaliede parkeer garages"/>
-    <pie :chartData="chartData" />
+    <pie v-if="chartData" :chartData="chartData" />
     <bar />
     <buttons />
   </div>
@@ -30,18 +30,14 @@ export default {
     }
   },
 
-  async created() {
-      async function fetchData() {
-        let fetchedData =  await jsonData.default()
-        let data = await fetchedData
-        return data
-
-      }
-    this.chartData = await fetchData()
-    return fetchData()
+  mounted () {
+    this.fetchData()
   },
 
   methods: {
+    async fetchData () {
+      this.chartData = await jsonData.default();
+    }
   }
 
 }

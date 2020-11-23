@@ -1,6 +1,6 @@
 <template>
     <h1>pie</h1>
-    <svg id="pie"></svg>
+    <svg class="pie"></svg>
 </template>
 
 <script>
@@ -22,12 +22,14 @@
         async mounted() {
 
         let data = this.chartData.GR
-        this.svg = d3.select("#pie")
+        this.svg = d3.selectAll(".pie")
 
 
         this.svg
             .attr("width", this.width)
             .attr("height", this.height)
+
+
             const g = this.svg.append('g')
                 .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`)
 

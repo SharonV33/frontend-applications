@@ -24,6 +24,8 @@
         let data = this.chartData.GR
         this.svg = d3.selectAll(".pie")
 
+            console.log(data)
+
 
         this.svg
             .attr("width", this.width)

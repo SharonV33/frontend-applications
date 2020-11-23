@@ -18,19 +18,21 @@
                 radius: 200
             }
         },
-        methods: {
+        mounted() {
+            this.buildPieChart()
+
         },
-        async mounted() {
+        methods: {
+            buildPieChart: function() {
+                let data = this.chartData.GR
+                this.svg = d3.selectAll(".pie")
 
-            let data = await this.chartData.GR
-            this.svg = d3.selectAll(".pie")
-
-            console.log(data)
+                console.log(data)
 
 
-            this.svg
-                .attr("width", this.width)
-                .attr("height", this.height)
+                this.svg
+                    .attr("width", this.width)
+                    .attr("height", this.height)
 
 
                 const g = this.svg.append('g')
@@ -56,12 +58,13 @@
                     .append('g')
                     .attr('class', 'arc')
 
-                //set up the chart
+
                 pies
                     .append('path')
                     .attr('d', path)
                     .attr('fill', data => color(data.value))
 
+            }
         },
     }
 </script>

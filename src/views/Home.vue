@@ -1,11 +1,10 @@
 <template>
   <div class="home">
     <homeOverview msg="Mindervaliede parkeer garages"/>
-    <pie v-if="chartData.length" :chartData="chartData" />
+    <pie v-if="chartData.[currentProvince].length" :chartData="chartData" :currentProvince="currentProvince" />
     <span v-else>Grafiek wordt geladen...</span>
     <bar />
-    {{ chartData }}
-    <buttons />
+    <buttons :currentProvince="currentProvince" v-on:change-province="updateProvince($event)"/>
   </div>
 </template>
 
@@ -28,7 +27,8 @@ export default {
 
     data () {
       return {
-        chartData: []
+        chartData: [],
+        currentProvince: "GR",
       }
     },
 
@@ -39,8 +39,12 @@ export default {
     methods: {
         async fetchData () {
             const data = await jsonScript.fetchData()
-            this.chartData = data.GR
-        }
+            this.chartData = data
+        },
+
+        updateProvince: function(newProvince){
+          this.currentProvince = newProvince
+        },
     }
 }
 </script>

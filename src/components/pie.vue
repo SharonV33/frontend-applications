@@ -9,7 +9,10 @@
 
     export default {
         name: "pie",
-        props: ['chartData'],
+        props: {
+            chartData: Object,
+            currentProvince: String
+        },
         data() {
             return {
                 svg: Object,
@@ -23,9 +26,14 @@
         },
         methods: {
             buildPieChart: async function() {
-                let data = this.chartData
+                const data = this.chartData[this.currentProvince]
+                console.log(data)
+
                 this.svg = d3.selectAll(".pie")
                 const svg = this.svg
+                d3.select(svg)
+                    .selectAll("*")
+                    .remove()
 
                 svg
                     .attr("width", this.width)

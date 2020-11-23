@@ -2,12 +2,12 @@
     <div>
         <section class="buttons">
             <section id="workingButtons">
-                <button id="DR" v-on:click="click('DR')">Drenthe</button>
-                <button id="FL" v-on:click="click('FL')">Flevoland</button>
-                <button id="GR" v-on:click="click('GR')">Groningen</button>
-                <button id="FR" v-on:click="click('FR')">Friesland</button>
-                <button id="overview" v-on:click="click('overview')">Nederland</button>
-                <button id="compare" v-on:click="click('compare')">Vergelijk provincies</button>
+                <button id="DR" v-on:click="changeProvince('DR')">Drenthe</button>
+                <button id="FL" v-on:click="changeProvince('FL')">Flevoland</button>
+                <button id="GR" v-on:click="changeProvince('GR')">Groningen</button>
+                <button id="FR" v-on:click="changeProvince('FR')">Friesland</button>
+                <button id="overview" v-on:click="changeProvince('overview')">Nederland</button>
+                <button id="compare" v-on:click="changeProvince('compare')">Vergelijk provincies</button>
             </section>
 
             <section class="disabledButtons">
@@ -29,10 +29,15 @@
     // import d3 from "d3";
     export default {
         name: "buttons",
+        props: {
+            currentProvince: String
+        },
+        data() {
+            return{}
+        },
         methods: {
-
-            click: function(id) {
-                alert(id)
+            changeProvince: function(id) {
+                this.$emit('change-province', id)
             }
         },
     }

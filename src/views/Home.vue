@@ -1,8 +1,10 @@
 <template>
   <div class="home">
     <homeOverview msg="Mindervaliede parkeer garages"/>
-    <pie v-if="chartData" :chartData="chartData" />
+    <pie v-if="chartData.length" :chartData="chartData" />
+    <span v-else>Grafiek wordt geladen...</span>
     <bar />
+    {{ chartData }}
     <buttons />
   </div>
 </template>
@@ -13,33 +15,33 @@ import homeOverview from '@/components/homeOverview.vue'
 import buttons from '@/components/buttons.vue'
 import pie from '@/components/pie.vue'
 import bar from '@/components/bar.vue'
-import * as jsonData from'@/helpers/jsonscript.js'
+import jsonScript from'@/helpers/jsonscript.js'
 
 export default {
-  name: 'Home',
-  components: {
-    homeOverview,
-    buttons,
-    pie,
-    bar
-  },
+    name: 'Home',
+    components: {
+        homeOverview,
+        buttons,
+        pie,
+        bar
+    },
 
-  data () {
-    return {
-      chartData : []
+    data () {
+      return {
+        chartData: []
+      }
+    },
+
+    mounted () {
+      this.fetchData()
+    },
+
+    methods: {
+        async fetchData () {
+            const data = await jsonScript.fetchData()
+            this.chartData = data.GR
+        }
     }
-  },
-
-  mounted () {
-    this.fetchData()
-  },
-
-  methods: {
-    async fetchData () {
-      this.chartData = await jsonData.default();
-    }
-  }
-
 }
 </script>
 

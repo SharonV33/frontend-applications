@@ -20,11 +20,10 @@
         },
         mounted() {
             this.buildPieChart()
-
         },
         methods: {
             buildPieChart: async function() {
-                let data = await this.chartData.GR
+                let data = this.chartData
                 this.svg = d3.selectAll(".pie")
 
                 this.svg

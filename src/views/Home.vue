@@ -4,7 +4,6 @@
     <pie :chartData="chartData" />
     <bar />
     <buttons />
-    <button v-on:click="checkData">check json</button>
   </div>
 </template>
 
@@ -43,10 +42,6 @@ export default {
   },
 
   methods: {
-    // checkData: async function() {
-    //   const fetchedData =  await jsonData.default()
-    //   this.chartData = fetchedData
-    // }
   }
 
 }

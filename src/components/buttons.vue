@@ -2,10 +2,10 @@
     <div>
         <section class="buttons">
             <section id="workingButtons">
-                <button id="DR" v-on:click="changeProvince('DR')">Drenthe</button>
-                <button id="FL" v-on:click="changeProvince('FL')">Flevoland</button>
-                <button id="GR" v-on:click="changeProvince('GR')">Groningen</button>
-                <button id="FR" v-on:click="changeProvince('FR')">Friesland</button>
+                <button id="DR" v-on:click="changeProvince('DR')" :class="currentProvince === 'DR' ? 'active' : ''">Drenthe</button>
+                <button id="FL" v-on:click="changeProvince('FL')" :class="currentProvince === 'FL' ? 'active' : ''">Flevoland</button>
+                <button id="GR" v-on:click="changeProvince('GR')" :class="currentProvince === 'GR' ? 'active' : ''">Groningen</button>
+                <button id="FR" v-on:click="changeProvince('FR')" :class="currentProvince === 'FR' ? 'active' : ''">Friesland</button>
                 <button id="overview" v-on:click="changeProvince('finalData')">Nederland</button>
                 <button id="compare" v-on:click="changeProvince('allProvinces')">Vergelijk provincies</button>
             </section>
@@ -63,6 +63,10 @@
     }
     #NH, #ZH, #UT, #OV, #NB, #LB, #ZL, #GD{
         background-color: black;
+    }
+
+    .active {
+        background-color: #98abc5;
     }
 
 </style>

@@ -1,9 +1,14 @@
 <template>
   <div class="home">
     <homeOverview msg="Mindervaliede parkeer garages"/>
-    <pie v-if="chartData.[currentProvince]" :chartData="chartData.[currentProvince]" />
-    <span v-else>Grafiek wordt geladen...</span>
-    <bar />
+    <section v-if="currentProvince === 'allProvinces'">
+      <bar :chartData="chartData.[currentProvince]"/>
+    </section>
+    <section v-else>
+      <pie v-if="chartData.[currentProvince]" :chartData="chartData.[currentProvince]" />
+      <span v-else>Grafiek wordt geladen...</span>
+    </section>
+
     <buttons :currentProvince="currentProvince" v-on:change-province="updateProvince($event)"/>
   </div>
 </template>
@@ -28,7 +33,7 @@ export default {
     data () {
       return {
         chartData: [],
-        currentProvince: "GR",
+        currentProvince: "",
       }
     },
 
@@ -40,11 +45,11 @@ export default {
         async fetchData () {
             const data = await jsonScript.fetchData()
             this.chartData = data
-          console.log(data)
         },
 
         updateProvince: function(newProvince){
           this.currentProvince = newProvince
+          console.log(this.currentProvince)
         },
     }
 }

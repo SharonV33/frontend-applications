@@ -1,7 +1,6 @@
 <template>
     <h1>pie</h1>
     <svg class="pie"></svg>
-    <p>{{ chartData.GR }}</p>
 </template>
 
 <script>

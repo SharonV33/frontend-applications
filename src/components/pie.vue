@@ -1,11 +1,11 @@
 <template>
     <svg class="pie"></svg>
-    <legend />
+    <Legend />
 </template>
 
 <script>
      import * as d3 from 'd3'
-     import legend from '@/components/legend.vue'
+     import Legend from '@/components/legend.vue'
 
     export default {
         name: "pie",
@@ -13,7 +13,7 @@
             chartData: Object
         },
         components: {
-            legend
+          Legend
         },
         data() {
             return {

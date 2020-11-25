@@ -1,19 +1,19 @@
 <template>
     <svg class="pie"></svg>
-    <legend :chartData="data"/>
+    <legend />
 </template>
 
 <script>
-    import legend from '@/components/legend.vue'
      import * as d3 from 'd3'
+     import legend from '@/components/legend.vue'
 
     export default {
         name: "pie",
-        components: {
-            legend,
-        },
         props: {
             chartData: Object
+        },
+        components: {
+            legend
         },
         data() {
             return {

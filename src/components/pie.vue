@@ -1,6 +1,6 @@
 <template>
     <svg class="pie"></svg>
-    <legend />
+    <legend v-bind:chartData="data"/>
 </template>
 
 <script>
@@ -12,7 +12,7 @@
         props: {
             chartData: Object
         },
-        components: {
+        Components: {
             legend
         },
         data() {

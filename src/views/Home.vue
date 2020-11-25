@@ -1,21 +1,20 @@
 <template>
   <div class="home">
-    <homeOverview msg="Mindervaliede parkeer garages"/>
+    <!--<homeOverview msg="Mindervaliede parkeer garages"/>-->
+    <buttons :currentProvince="currentProvince" v-on:change-province="updateProvince($event)"/>
     <section v-if="currentProvince === 'allProvinces'">
       <bar :chartData="chartData.[currentProvince]"/>
     </section>
     <section v-else>
       <pie v-if="chartData.[currentProvince]" :chartData="chartData.[currentProvince]" />
-      <span v-else>Grafiek wordt geladen...</span>
+      <span v-else>intro over visualisatie hier</span>
     </section>
-
-    <buttons :currentProvince="currentProvince" v-on:change-province="updateProvince($event)"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import homeOverview from '@/components/homeOverview.vue'
+// import homeOverview from '@/components/homeOverview.vue'
 import buttons from '@/components/buttons.vue'
 import pie from '@/components/pie.vue'
 import bar from '@/components/bar.vue'
@@ -24,7 +23,7 @@ import jsonScript from'@/helpers/jsonscript.js'
 export default {
     name: 'Home',
     components: {
-        homeOverview,
+        // homeOverview,
         buttons,
         pie,
         bar
@@ -54,3 +53,10 @@ export default {
     }
 }
 </script>
+<style scoped>
+  .home {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 40% auto ;
+  }
+</style>

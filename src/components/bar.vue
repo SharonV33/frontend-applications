@@ -1,7 +1,5 @@
 <template>
-    <h1>bar</h1>
     <svg class="bar"></svg>
-    <p>data {{ chartData }}</p>
 </template>
 
 <script>
@@ -16,9 +14,10 @@
         data() {
             return {
                 svg: Object,
-                margin: {top: 10, right: 0, bottom: 70, left: 30},
-                width: 470,
-                height: 320,
+                x: Function,
+                y: Function,
+                width: Number,//470,
+                height: Number,//320,
             }
         },
         mounted() {
@@ -31,6 +30,16 @@
             buildBarChart: async function() {
                 const data = this.chartData
 
+                const margin = {
+                        top: 10,
+                        right: 0,
+                        bottom: 70,
+                        left: 30
+                    },
+                    height = 320 - margin.top - margin.bottom,
+                    width = 470 - margin.left - margin.right
+
+
                 this.svg = d3.selectAll(".bar")
                 const svg = this.svg
 
@@ -38,32 +47,29 @@
                     .selectAll("*")
                     .remove()
 
-                svg
-                    .attr("width", this.width)
-                    .attr("height", this.height)
 
                 let xAxis = d3.scaleBand()
-                    .range([0, this.width])
+                    .range([0, width])
                     .domain(data.map(data => data.name))
                     .padding(0.5)
 
                 let yAxix = d3.scaleLinear()
                     .domain([0, max(data, data => data.isDisabled)])
-                    .range([this.height, 0])
+                    .range([height, 0])
 
 
                 //set up size of svg
-                svg.attr("width", this.width + this.margin.left + this.margin.right)
-                    .attr("height", this.height + this.margin.top + this.margin.bottom)
+                svg.attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
                     .append("g")
                     .attr("transform",
-                        "translate(" + this.margin.left + "," + this.margin.top + ")")
+                        "translate(" + margin.left + "," + margin.top + ")")
 
 
                 //set up x axis
                 svg.append("g")
                     .attr("class", "xAxis")
-                    .attr("transform", "translate(0," + this.height + ")")
+                    .attr("transform", "translate(0," + height + ")")
                     .call(d3.axisBottom(xAxis))
                     .selectAll("text")
                     .attr("transform", "translate(-10,10)rotate(-90)")
@@ -89,7 +95,7 @@
                     })
                     .attr("width", xAxis.bandwidth())
                     .attr("height", function (data) {
-                        return this.height - yAxix(data.isDisabled)
+                        return height - yAxix(data.isDisabled)
                     })
                     .attr("fill", "#8A89A6")
             }

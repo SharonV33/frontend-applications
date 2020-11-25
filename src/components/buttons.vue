@@ -46,7 +46,6 @@
 <style scoped>
     .buttons {
         display: flex;
-        width: 50%;
         flex-wrap: wrap;
     }
     .buttons section {

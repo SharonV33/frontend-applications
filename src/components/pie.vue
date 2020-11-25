@@ -1,5 +1,4 @@
 <template>
-    <h1>pie</h1>
     <svg class="pie"></svg>
 </template>
 
@@ -28,7 +27,6 @@
         methods: {
             buildPieChart: async function() {
                 const data = this.chartData
-
 
                 this.svg = d3.selectAll(".pie")
                 const svg = this.svg

@@ -11,15 +11,6 @@
         props: {
             chartData: Object
         },
-        data() {
-            return {
-                svg: Object,
-                x: Function,
-                y: Function,
-                width: Number,//470,
-                height: Number,//320,
-            }
-        },
         mounted() {
             this.buildBarChart()
         },
@@ -27,7 +18,7 @@
             this.buildBarChart()
         },
         methods: {
-            buildBarChart: async function() {
+            buildBarChart: function() {
                 const data = this.chartData
 
                 const margin = {

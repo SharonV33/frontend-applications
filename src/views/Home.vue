@@ -48,7 +48,6 @@ export default {
 
         updateProvince: function(newProvince){
           this.currentProvince = newProvince
-          console.log(this.currentProvince)
         },
     }
 }

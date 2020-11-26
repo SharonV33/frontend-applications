@@ -20,16 +20,14 @@
         methods: {
             buildBarChart: function() {
                 const data = this.chartData
-
                 const margin = {
                         top: 10,
                         right: 0,
                         bottom: 70,
                         left: 30
-                    },
-                    height = 320 - margin.top - margin.bottom,
-                    width = 470 - margin.left - margin.right
-
+                    }
+                const height = 320 - margin.top - margin.bottom
+                const width = 470 - margin.left - margin.right
 
                 this.svg = d3.selectAll(".bar")
                 const svg = this.svg
@@ -37,7 +35,6 @@
                 svg
                     .selectAll("*")
                     .remove()
-
 
                 let xAxis = d3.scaleBand()
                     .range([0, width])
@@ -57,8 +54,8 @@
                         "translate(" + margin.left + "," + margin.top + ")")
 
 
-                //set up x axis
-                svg.append("g")
+                 //set up x axis
+                    svg.append("g")
                     .attr("class", "xAxis")
                     .attr("transform", "translate(0," + height + ")")
                     .call(d3.axisBottom(xAxis))
@@ -67,28 +64,28 @@
                     .style("text-anchor", "end")
 
 
-                //set up y axis
-                svg.append("g")
-                    .attr("class", "yAxis")
-                    .call(d3.axisLeft(yAxix))
+                    //set up y axis
+                    svg.append("g")
+                        .attr("class", "yAxis")
+                        .call(d3.axisLeft(yAxix))
 
 
-                svg.selectAll("bar")
-                    .data(data)
-                    .attr("class", "bar")
-                    .enter()
-                    .append("rect")
-                    .attr("x", function (data) {
-                        return xAxis(data.name)
-                    })
-                    .attr("y", function (data) {
-                        return yAxix(data.isDisabled)
-                    })
-                    .attr("width", xAxis.bandwidth())
-                    .attr("height", function (data) {
-                        return height - yAxix(data.isDisabled)
-                    })
-                    .attr("fill", "#8A89A6")
+                    svg.selectAll("bar")
+                        .data(data)
+                        .attr("class", "bar")
+                        .enter()
+                        .append("rect")
+                        .attr("x", function (data) {
+                            return xAxis(data.name)
+                        })
+                        .attr("y", function (data) {
+                            return yAxix(data.isDisabled)
+                        })
+                        .attr("width", xAxis.bandwidth())
+                        .attr("height", function (data) {
+                            return height - yAxix(data.isDisabled)
+                        })
+                        .attr("fill", "#8A89A6")
             }
 
         }

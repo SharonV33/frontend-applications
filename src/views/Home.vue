@@ -3,7 +3,7 @@
     <!--<homeOverview msg="Mindervaliede parkeer garages"/>-->
     <buttons :currentProvince="currentProvince" v-on:change-province="updateProvince($event)"/>
     <section v-if="currentProvince === 'allProvinces'">
-      <bar :chartData="chartData.[currentProvince]"/>
+      <bar :chartData="chartData.allProvinces"/>
     </section>
     <section v-else>
       <pie v-if="chartData.[currentProvince]" :chartData="chartData.[currentProvince]" />

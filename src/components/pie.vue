@@ -1,19 +1,20 @@
 <template>
     <svg class="pie"></svg>
-    <legend v-bind:chartData="data"/>
+    <MyLegend v-bind:chartData="data" />
 </template>
 
 <script>
      import * as d3 from 'd3'
-     import legend from '@/components/legend.vue'
+     import MyLegend from "@/components/legend";
 
     export default {
         name: "pie",
+        components: {MyLegend},
         props: {
             chartData: Object
         },
         Components: {
-            legend
+            MyLegend
         },
         data() {
             return {

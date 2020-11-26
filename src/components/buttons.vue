@@ -20,7 +20,7 @@
                 <button id="LB">Limburg</button>
                 <button id="ZL">Zeeland</button>
             </section>
-            <p>Black buttons are provinces currently unavalible due to a lack of data</p>
+            <p>Zwarte knoppen zijn tijdelijk onbeschikbaar door een tekort aan data</p>
         </section>
     </div>
 </template>

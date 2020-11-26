@@ -28,27 +28,31 @@ export default {
         pie,
         bar
     },
-
     data () {
       return {
         chartData: [],
         currentProvince: "",
       }
     },
-
     mounted () {
       this.fetchData()
+      if(localStorage.currentProvince) {
+        this.currentProvince = localStorage.getItem('currentProvince')
+      }
     },
-
+    watch: {
+      currentProvince(newProvince) {
+        localStorage.setItem('currentProvince', newProvince)
+      }
+    },
     methods: {
         async fetchData () {
             const data = await jsonScript.fetchData()
             this.chartData = data
         },
-
         updateProvince: function(newProvince){
           this.currentProvince = newProvince
-        },
+        }
     }
 }
 </script>

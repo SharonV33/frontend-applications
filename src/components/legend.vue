@@ -1,12 +1,14 @@
 <template>
-    <svg class="legend"></svg>
+    <section>
+        <svg class="legend"></svg>
+    </section>
 </template>
 
 <script>
     import * as d3 from 'd3';
 
     export default {
-        name: "legend",
+        name: "MyLegend",
         props: {
             chartData: Object
         },
@@ -18,7 +20,6 @@
         },
         methods: {
             buildLegend: function() {
-                console.log(this.chartData)
                 const svg = d3.selectAll(".legend")
                 const size = 20
                 const data = this.chartData

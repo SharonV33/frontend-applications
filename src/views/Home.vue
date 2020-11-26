@@ -1,6 +1,6 @@
 <template>
+  <h1>Mindervaliede parkeer garages</h1>
   <div class="home">
-    <!--<homeOverview msg="Mindervaliede parkeer garages"/>-->
     <buttons :currentProvince="currentProvince" v-on:change-province="updateProvince($event)"/>
     <section v-if="currentProvince === 'allProvinces'">
       <bar :chartData="chartData.allProvinces"/>
@@ -14,7 +14,6 @@
 
 <script>
 // @ is an alias to /src
-// import homeOverview from '@/components/homeOverview.vue'
 import buttons from '@/components/buttons.vue'
 import pie from '@/components/pie.vue'
 import bar from '@/components/bar.vue'
@@ -23,7 +22,6 @@ import jsonScript from'@/helpers/jsonscript.js'
 export default {
     name: 'Home',
     components: {
-        // homeOverview,
         buttons,
         pie,
         bar
@@ -31,7 +29,7 @@ export default {
     data () {
       return {
         chartData: [],
-        currentProvince: "",
+        currentProvince: '',
       }
     },
     mounted () {
@@ -60,6 +58,6 @@ export default {
   .home {
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 40% auto ;
+    grid-template-columns: 40% auto;
   }
 </style>

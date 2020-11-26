@@ -3,11 +3,11 @@
 </template>
 
 <script>
-    import * as d3 from 'd3';
+    import * as d3 from 'd3'
     import { max } from 'd3'
 
     export default {
-        name: "bar",
+        name: 'bar',
         props: {
             chartData: Object
         },
@@ -29,12 +29,8 @@
                 const height = 320 - margin.top - margin.bottom
                 const width = 470 - margin.left - margin.right
 
-                this.svg = d3.selectAll(".bar")
+                this.svg = d3.selectAll('.bar')
                 const svg = this.svg
-
-                svg
-                    .selectAll("*")
-                    .remove()
 
                 let xAxis = d3.scaleBand()
                     .range([0, width])
@@ -47,51 +43,47 @@
 
 
                 //set up size of svg
-                svg.attr("width", width + margin.left + margin.right)
-                    .attr("height", height + margin.top + margin.bottom)
-                    .append("g")
-                    .attr("transform",
+                svg.attr('width', width + margin.left + margin.right)
+                    .attr('height', height + margin.top + margin.bottom)
+                    .append('g')
+                    .attr('transform',
                         "translate(" + margin.left + "," + margin.top + ")")
 
 
                  //set up x axis
-                    svg.append("g")
-                    .attr("class", "xAxis")
-                    .attr("transform", "translate(0," + height + ")")
+                    svg.append('g')
+                    .attr('class', 'xAxis')
+                    .attr('transform', 'translate(0,' + height + ')')
                     .call(d3.axisBottom(xAxis))
-                    .selectAll("text")
-                    .attr("transform", "translate(-10,10)rotate(-90)")
-                    .style("text-anchor", "end")
+                    .selectAll('text')
+                    .attr('transform', 'translate(-10,10)rotate(-90)')
+                    .style('text-anchor', 'end')
 
 
                     //set up y axis
-                    svg.append("g")
-                        .attr("class", "yAxis")
+                    svg.append('g')
+                        .attr('class', 'yAxis')
                         .call(d3.axisLeft(yAxix))
 
 
-                    svg.selectAll("bar")
+                    svg.selectAll('bar')
                         .data(data)
-                        .attr("class", "bar")
+                        .attr('class', 'bar')
                         .enter()
-                        .append("rect")
-                        .attr("x", function (data) {
+                        .append('rect')
+                        .attr('x', function (data) {
                             return xAxis(data.name)
                         })
-                        .attr("y", function (data) {
+                        .attr('y', function (data) {
                             return yAxix(data.isDisabled)
                         })
-                        .attr("width", xAxis.bandwidth())
-                        .attr("height", function (data) {
+                        .attr('width', xAxis.bandwidth())
+                        .attr('height', function (data) {
                             return height - yAxix(data.isDisabled)
                         })
-                        .attr("fill", "#8A89A6")
+                        .attr('fill', '#8A89A6')
             }
 
         }
     }
 </script>
-
-<style scoped>
-
-</style>

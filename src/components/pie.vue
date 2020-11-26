@@ -46,7 +46,6 @@
                     .attr('width', this.width)
                     .attr('height', this.height)
 
-
                 const g = svg.append('g')
                     .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`)
 

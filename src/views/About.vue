@@ -5,7 +5,8 @@
       Er zijn in Nederland zo'n 1,4 miljoen mensen met een lichamelijke beperking*.
       Dit is ongeveer 8% van de Nederlandse bevolking. Veel van deze mensen kunnen
       zichzelf nog vervoeren, andere laten zich vervoeren door familie of een
-      begeleider. Ikzelf val in de eerste categorie, helaas heb ik regelmatig moeite
+      begeleider. Vaak is het niet mogelijk dat deze mensen gebruik kunnen maken
+      van een trap. Ikzelf val in de eerste categorie, helaas heb ik regelmatig moeite
       met het vinden van een parkeergarage waar ik geen trap voor hoef te gebruiken.
       In samenwerking met de Volkskrant ben ik aan de slag gegaan met het maken van
       een data visualisatie die in kaart brengt hoeveel parkeergarages beschikbaar zijn

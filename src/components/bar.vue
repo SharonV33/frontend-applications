@@ -17,14 +17,9 @@
         methods: {
             buildBarChart: function() {
                 const data = this.chartData
-                const margin = {
-                        top: 10,
-                        right: 0,
-                        bottom: 70,
-                        left: 30
-                    }
-                const height = 320 - margin.top - margin.bottom
-                const width = 470 - margin.left - margin.right
+                const margin = {top: 10, right: 0, bottom: 70, left: 30}
+                const width = 500 - margin.left - margin.right
+                const height = 400 - margin.top - margin.bottom
 
                 this.svg = d3.selectAll('.bar')
                 const svg = this.svg
@@ -40,10 +35,10 @@
 
 
                 //set up size of svg
-                svg.attr('width', width + margin.left + margin.right)
-                    .attr('height', height + margin.top + margin.bottom)
-                    .append('g')
-                    .attr('transform',
+                svg.attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform",
                         "translate(" + margin.left + "," + margin.top + ")")
 
 
@@ -58,8 +53,8 @@
 
 
                     //set up y axis
-                    svg.append('g')
-                        .attr('class', 'yAxis')
+                    svg.append("g")
+                        .attr("class", "yAxis")
                         .call(d3.axisLeft(yAxix))
 
 
@@ -84,3 +79,9 @@
         }
     }
 </script>
+<style scoped>
+    .bar {
+        overflow: visible;
+        margin-left: 3em;
+    }
+</style>

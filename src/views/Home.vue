@@ -11,7 +11,7 @@
         Dit is ongeveer 8% van de Nederlandse bevolking. Veel van deze mensen kunnen zichzelf
         nog vervoeren, andere laten zich vervoeren door familie of een begeleider. Vaak is
         het niet mogelijk dat deze mensen gebruik kunnen maken van een trap. In deze data
-        visualisatie ga ik kijken hoeveel parkeer garages per provincie toegankelijk
+        visualisatie kunt u kijken naar hoeveel parkeer garages er per provincie toegankelijk
         zijn voor mindervalide mensen. Klik op een knop om meer te weten te komen over die provincie of vergelijk alle provincies.</p>
     </section>
   </div>

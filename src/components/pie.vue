@@ -5,10 +5,10 @@
 
 <script>
      import * as d3 from 'd3'
-     import MyLegend from "@/components/legend";
+     import MyLegend from '@/components/legend'
 
     export default {
-        name: "pie",
+        name: 'pie',
         components: {MyLegend},
         props: {
             chartData: Object
@@ -35,16 +35,16 @@
             buildPieChart: function() {
                 const data = this.chartData
 
-                this.svg = d3.selectAll(".pie")
+                this.svg = d3.selectAll('.pie')
                 const svg = this.svg
 
                 svg
-                    .selectAll("*")
+                    .selectAll('*')
                     .remove()
 
                 svg
-                    .attr("width", this.width)
-                    .attr("height", this.height)
+                    .attr('width', this.width)
+                    .attr('height', this.height)
 
 
                 const g = svg.append('g')
@@ -52,7 +52,7 @@
 
                 const color = d3.scaleOrdinal(data)
                     .domain(data)
-                    .range(["#98abc5", "#8a89a6"])
+                    .range(['#98abc5', '#8a89a6'])
 
                 const pie = d3.pie()
                     .value(data => data.value)
@@ -72,11 +72,23 @@
                     .attr('d', path)
                     .attr('fill', data => color(data.value))
 
+
             }
         },
     }
 </script>
 
 <style scoped>
-
+    .tooltip {
+        position: absolute;
+        text-align: center;
+        width: 60px;
+        height: 28px;
+        padding: 2px;
+        font: 12px sans-serif;
+        background: lightsteelblue;
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+    }
 </style>

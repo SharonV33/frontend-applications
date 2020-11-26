@@ -1,7 +1,5 @@
 <template>
-    <section>
-        <svg class="legend"></svg>
-    </section>
+    <svg class="legend"></svg>
 </template>
 
 <script>
@@ -28,6 +26,7 @@
                     .domain(data)
                     .range(['#98abc5', '#8a89a6'])
 
+                //set up size and border of legend container
                 svg.attr('width', 150)
                     .attr('height', 100)
                     .style('border', '1px solid darkgray')
@@ -39,7 +38,7 @@
                     //rect is a default d3 shape
                     .append('rect')
                     .attr('x', 25)
-                    .attr('y', function(d,i){ return 25 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
+                    .attr('y', function(d,i){ return 25 + i*(size+5)})
                     .attr('width', size)
                     .attr('height', size)
                     .style('fill', data => color(data.name))
@@ -51,14 +50,10 @@
                     .enter()
                     .append('text')
                     .attr('x', 25 + size*1.5)
-                    .attr('y', function(d,i){ return 25 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
+                    .attr('y', function(d,i){ return 25 + i*(size+5) + (size/2)})
                     .text(function(data){ return data.name})
 
             }
         }
     }
 </script>
-
-<style scoped>
-
-</style>

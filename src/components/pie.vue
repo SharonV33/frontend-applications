@@ -34,28 +34,28 @@
         methods: {
             buildPieChart: function() {
                 const data = this.chartData
-
                 this.svg = d3.selectAll('.pie')
                 const svg = this.svg
 
-                svg
-                    .selectAll('*')
-                    .remove()
-
+                //asign size of svg
                 svg
                     .attr('width', this.width)
                     .attr('height', this.height)
 
+                //create size of pie chart
                 const g = svg.append('g')
                     .attr('transform', `translate(${this.width / 2}, ${this.height / 2})`)
 
+                //create colour scale for slices
                 const color = d3.scaleOrdinal(data)
                     .domain(data)
                     .range(['#98abc5', '#8a89a6'])
 
+                //add data each slice of the chart
                 const pie = d3.pie()
                     .value(data => data.value)
 
+                //create inner and outer radius of the chart
                 const path = d3.arc()
                     .outerRadius(this.radius)
                     .innerRadius(0)
@@ -76,6 +76,3 @@
         },
     }
 </script>
-
-<style scoped>
-</style>

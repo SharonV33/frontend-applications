@@ -33,17 +33,15 @@
                     .domain([0, max(data, data => data.isDisabled)])
                     .range([height, 0])
 
-
                 //set up size of svg
-                svg.attr("width", width + margin.left + margin.right)
-                    .attr("height", height + margin.top + margin.bottom)
-                    .append("g")
-                    .attr("transform",
-                        "translate(" + margin.left + "," + margin.top + ")")
-
+                svg.attr('width', width + margin.left + margin.right)
+                    .attr('height', height + margin.top + margin.bottom)
+                    .append('g')
+                    .attr('transform',
+                        'translate(' + margin.left + ',' + margin.top + ')')
 
                  //set up x axis
-                    svg.append('g')
+                svg.append('g')
                     .attr('class', 'xAxis')
                     .attr('transform', 'translate(0,' + height + ')')
                     .call(d3.axisBottom(xAxis))
@@ -51,29 +49,27 @@
                     .attr('transform', 'translate(-10,10)rotate(-90)')
                     .style('text-anchor', 'end')
 
+                //set up y axis
+                svg.append('g')
+                    .attr('class', 'yAxis')
+                    .call(d3.axisLeft(yAxix))
 
-                    //set up y axis
-                    svg.append("g")
-                        .attr("class", "yAxis")
-                        .call(d3.axisLeft(yAxix))
-
-
-                    svg.selectAll('bar')
-                        .data(data)
-                        .attr('class', 'bar')
-                        .enter()
-                        .append('rect')
-                        .attr('x', function (data) {
-                            return xAxis(data.name)
-                        })
-                        .attr('y', function (data) {
-                            return yAxix(data.isDisabled)
-                        })
-                        .attr('width', xAxis.bandwidth())
-                        .attr('height', function (data) {
-                            return height - yAxix(data.isDisabled)
-                        })
-                        .attr('fill', '#8A89A6')
+                svg.selectAll('bar')
+                    .data(data)
+                    .attr('class', 'bar')
+                    .enter()
+                    .append('rect')
+                    .attr('x', function (data) {
+                        return xAxis(data.name)
+                    })
+                    .attr('y', function (data) {
+                        return yAxix(data.isDisabled)
+                    })
+                    .attr('width', xAxis.bandwidth())
+                    .attr('height', function (data) {
+                        return height - yAxix(data.isDisabled)
+                    })
+                    .attr('fill', '#8A89A6')
             }
 
         }

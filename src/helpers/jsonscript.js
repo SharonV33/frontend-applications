@@ -83,43 +83,41 @@ const fetchData = async () => {
 
 
     let rawGR = allData.filter(function(data){
-        return data.province === "Groningen"
+        return data.province === 'Groningen'
         })
     let rawFR = allData.filter(function(data){
-        return data.province === "Friesland"
+        return data.province === 'Friesland'
     })
     let rawUT = allData.filter(function(data){
-        return data.province === "Utrecht"
+        return data.province === 'Utrecht'
     })
     let rawOV = allData.filter(function(data){
-        return data.province === "Overijsel"
+        return data.province === 'Overijsel'
     })
     let rawFL = allData.filter(function(data){
-        return data.province === "Flevoland"
+        return data.province === 'Flevoland'
     })
     let rawZL = allData.filter(function(data){
-        return data.province === "Zeeland"
+        return data.province === 'Zeeland'
     })
     let rawLB = allData.filter(function(data){
-        return data.province === "Limburg"
+        return data.province === 'Limburg'
     })
     let rawGD = allData.filter(function(data){
-        return data.province === "Gelderland"
+        return data.province === 'Gelderland'
     })
     let rawDR = allData.filter(function(data){
-        return data.province === "Drenthe"
+        return data.province === 'Drenthe'
     })
     let rawNH = allData.filter(function(data){
-        return data.province === "Noord Holland"
+        return data.province === 'Noord Holland'
     })
     let rawZH = allData.filter(function(data){
-        return data.province === "Zuid Holland"
+        return data.province === 'Zuid Holland'
     })
     let rawNB = allData.filter(function(data){
-        return data.province === "Noord Brabant"
+        return data.province === 'Noord Brabant'
     })
-
-
 
     let GR = readableData(rawGR)
     let FR = readableData(rawFR)
@@ -135,7 +133,6 @@ const fetchData = async () => {
     let NH = readableData(rawNH)
     let finalData = readableData(allData)
 
-
     //create a large dataset with all values per province for the bar chart
     allProvinces.push(
         {name: "Noord Holland", isDisabled: NH[0].value, notDisabled: NH[1].value},
@@ -150,7 +147,6 @@ const fetchData = async () => {
         {name: "Utrecht", isDisabled: UT[0].value, notDisabled: UT[1].value},
         {name: "Friesland", isDisabled: FR[0].value, notDisabled: FR[1].value},
         {name: "Groningen", isDisabled: GR[0].value, notDisabled: GR[1].value})
-
 
     return { finalData, allProvinces, NH, ZH, NB, DR, GD, LB, ZL, FL, OV, UT, FR, GR }
 }

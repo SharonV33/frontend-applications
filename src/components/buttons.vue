@@ -26,9 +26,8 @@
 </template>
 
 <script>
-    // import d3 from "d3";
     export default {
-        name: "buttons",
+        name: 'buttons',
         props: {
             currentProvince: String
         },
@@ -36,6 +35,7 @@
             return{}
         },
         methods: {
+            //pass custom event up to parent component (home)
             changeProvince: function(id) {
                 this.$emit('change-province', id)
             }
@@ -60,12 +60,10 @@
         border: 1px solid #575757;
         color: #575757;
     }
-    #NH, #ZH, #UT, #OV, #NB, #LB, #ZL, #GD{
+    #NH, #ZH, #UT, #OV, #NB, #LB, #ZL, #GD {
         background-color: black;
     }
-
     .active {
         background-color: #98abc5;
     }
-
 </style>

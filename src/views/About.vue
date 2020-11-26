@@ -12,6 +12,16 @@
       voor mindervalide. Voor dit onderzoek heb ik gebruik gemaakt van een parkeer
       dataset beschikbaar gesteld door de npro**.
     </p>
+    <p>
+      Wat ik heb ontdekt tijdens het maken van dit project is dat Groningen het erg
+      goed doet qua mindervalide toegankelijke parkeergarages. Ongeveer 7% van de
+      parkeergarages in de dataset die zich bevinden in Groningen zijn toegankelijk
+      voor mindervaliden mensen. Dit is ongeveer hetzelfde percentage als mindervalide
+      mensen in Nederland. In deze situatie moet echter wel rekening gehouden worden met
+      het feit dat Groningen een minder dichte populatie heeft dan bijvoorbeeld
+      Flevoland of noord Holland. Als we kijken naar de data van Flevoland zien we dat
+      maar ongeveer 3.5% van de parkeergarages toegankelijk is voor mindervalide mensen.
+    </p>
     <sub>
       bronnen:
       * https://www.vgn.nl/feiten-en-cijfers-de-gehandicaptenzorg

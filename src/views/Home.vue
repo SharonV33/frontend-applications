@@ -7,7 +7,12 @@
     </section>
     <section v-else>
       <pie v-if="chartData.[currentProvince]" :chartData="chartData.[currentProvince]" />
-      <span v-else>intro over visualisatie hier</span>
+      <p v-else>Er zijn in Nederland zo'n 1,4 miljoen mensen met een lichamelijke beperking*.
+        Dit is ongeveer 8% van de Nederlandse bevolking. Veel van deze mensen kunnen zichzelf
+        nog vervoeren, andere laten zich vervoeren door familie of een begeleider. Vaak is
+        het niet mogelijk dat deze mensen gebruik kunnen maken van een trap. In deze data
+        visualisatie ga ik kijken hoeveel parkeer garages per provincie toegankelijk
+        zijn voor mindervalide mensen. Klik op een knop om meer te weten te komen over die provincie of vergelijk alle provincies.</p>
     </section>
   </div>
 </template>
@@ -59,5 +64,9 @@ export default {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 40% auto;
+  }
+  p {
+    width: 70%;
+    text-align: center;
   }
 </style>

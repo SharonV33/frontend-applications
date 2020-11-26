@@ -52,7 +52,7 @@
                     .append('text')
                     .attr('x', 25 + size*1.5)
                     .attr('y', function(d,i){ return 25 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
-                    .text(function(data){ return data.name + data.value})
+                    .text(function(data){ return data.name})
 
             }
         }

@@ -3,7 +3,7 @@
   <div class="home">
     <buttons :currentProvince="currentProvince" v-on:change-province="updateProvince($event)"/>
     <section v-if="currentProvince === 'allProvinces'">
-      <bar :chartData="chartData.allProvinces"/>
+      <bar v-if="chartData.[currentProvince]" :chartData="chartData.[currentProvince]"/>
     </section>
     <section v-else>
       <pie v-if="chartData.[currentProvince]" :chartData="chartData.[currentProvince]" />
@@ -32,7 +32,7 @@ export default {
         currentProvince: '',
       }
     },
-    mounted () {
+    created () {
       this.fetchData()
       if(localStorage.currentProvince) {
         this.currentProvince = localStorage.getItem('currentProvince')

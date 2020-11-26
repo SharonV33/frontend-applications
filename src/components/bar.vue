@@ -14,9 +14,6 @@
         mounted() {
             this.buildBarChart()
         },
-        updated() {
-            this.buildBarChart()
-        },
         methods: {
             buildBarChart: function() {
                 const data = this.chartData

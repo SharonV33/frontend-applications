@@ -76,7 +76,7 @@
     }
 </script>
 <style scoped>
-    .bar {
+    svg {
         overflow: visible;
         margin-left: 3em;
     }

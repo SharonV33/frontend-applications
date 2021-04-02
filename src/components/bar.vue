@@ -16,6 +16,7 @@
         },
         methods: {
             buildBarChart: function() {
+                console.log("hoi")
                 const data = this.chartData
                 const margin = {top: 10, right: 0, bottom: 70, left: 30}
                 const width = 500 - margin.left - margin.right

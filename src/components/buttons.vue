@@ -37,6 +37,7 @@
         methods: {
             //pass custom event up to parent component (home)
             changeProvince: function(id) {
+                console.log("test button's emit data")
                 this.$emit('change-province', id)
             }
         },

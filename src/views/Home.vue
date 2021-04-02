@@ -51,6 +51,7 @@ export default {
     methods: {
         async fetchData () {
             const data = await jsonScript.fetchData()
+          console.log(data)
             this.chartData = data
         },
         updateProvince: function(newProvince){
